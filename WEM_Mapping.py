@@ -16,9 +16,9 @@ from datetime import datetime
 import shutil
 import glob
 from playsound import playsound
-import threading
+import threading 
 from MBExtract import MBExtract
-from updateLabels import updateLabels
+from updateLabels import updateLabels 
 from MBUltimate import MBUltimate
 from mbDegreesImport import mbDegreesImport
 from mbDegrees import mbDegrees
@@ -149,7 +149,7 @@ while True:
                         win_Programs.UnHide()
                         break
                     if ev_Layer == "Open Job Manual":
-                        os.startfile(r'\\WEM-MASTER\Sensitive Data\WEM Uintah\MapsJOB MANUAL.docx')
+                        os.startfile(r'\\WEM-MASTER\Sensitive Data\WEM Uintah\Maps\JOB MANUAL.docx')
 
 
             # Metes and Bounds Calculator

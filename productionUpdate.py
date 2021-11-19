@@ -12,7 +12,7 @@ def productionUpdate():
 
     data_dict = {}
     for idx, value in enumerate(entity_number):
-        path = r'https://oilgas.ogm.utah.gov/oilgasweb/live-data-search/lds-disp/disp-grid.xhtml?pruno=' + str(value)
+        path = r'http://oilgas.ogm.utah.gov/oilgasweb/live-data-search/lds-disp/disp-grid.xhtml?pruno=' + str(value)
         data = pd.read_html(path)
         df = data[1]
         key = well_list[idx]
@@ -24,3 +24,5 @@ def productionUpdate():
     out.to_csv(r'C:/Users/Accounting/Downloads/production.csv')
     out_text = 'Done, see ' + fp + '.'
     return out_text
+
+#productionUpdate()

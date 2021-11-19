@@ -27,8 +27,8 @@ def updateLabels(webscrape, workingInterestFile, ownershipFile):
     if webscrape == True:
 
         # Set up
-        user_email = r'pvankatwyk@gmail.com'
-        user_password = r'A&8BYpG%&*xy#s!'
+        user_email = r'duckmuck@verizon.net'
+        user_password = r'Crinoid@252Ma'
         path = r'\\WEM-MASTER\Working Projects\WEMU Leasing\Python Codes\Python Code\chromedriver.exe'
         driver = webdriver.Chrome(path)
 
@@ -73,7 +73,7 @@ def updateLabels(webscrape, workingInterestFile, ownershipFile):
         tractowner = findElement(r'//*[@id="ui-id-2"]/div[contains(.,"Tract Ownership List")]/a')
         tractowner.click()
         # Get download ID
-        target = findElement('//*[@id="filters"]/table/tbody/tr[11]/td[2]/div/a')
+        target = findElement(f'//*[@id="filters"]/table/tbody/tr[11]/td[2]/div/a')
         target = str(target.get_attribute('id'))
         ids = target[len('data-picker-'):-len('-trigger')]
         selowner = findElement(f'//*[@id="data-picker-{ids}-trigger"]')
