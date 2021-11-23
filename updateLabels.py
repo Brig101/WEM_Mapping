@@ -59,23 +59,33 @@ def updateLabels(webscrape, workingInterestFile, ownershipFile):
         password.click()
         password.send_keys(user_password)
         password.send_keys(Keys.RETURN)
-
+        
+        #clicks WEM Uintah project
         project = findElement(r'//*[@id="projectList"]/table/tbody/tr/td[1]/a')
         project.click()
-
+        
+        #clicks ilandman Dropdown reports carrot
         reportdrop = findElement(r'//*[@id="menu"]/ul/li[6]/span/a')
         reportdrop.click()
+        #clicks 'tract reports' button from dropdown menu
         tractreport = findElement(r'//*[@id="menu"]/ul/li[6]/div[1]/div/a[1]')
         tractreport.click()
-        tractr = findElement(r'//*[@id="Tract_reports"]/a')
-        tractr.click()
+        ##this option is not interactable... I think we can just skip it
+        #tractr = findElement(r'//*[@id="Tract_reports"]/a')
+        #tractr.click()
         time.sleep(1)
-        tractowner = findElement(r'//*[@id="ui-id-2"]/div[contains(.,"Tract Ownership List")]/a')
+        ##following two lines are old, and have been replaced
+        #tractowner = findElement(r'//*[@id="ui-id-2"]/div[contains(.,"Tract Ownership List")]/a')
+        #tractowner.click()
+        #This selects the "tract ownership list" excel 
+        tractowner = findElement(r'//*[@id="ui-id-1"]/div[25]/a')
         tractowner.click()
         # Get download ID
-        target = findElement(f'//*[@id="filters"]/table/tbody/tr[11]/td[2]/div/a')
+        #target = findElement(f'//*[@id="filters"]/table/tbody/tr[11]/td[2]/div/a')
+        target = findElement(r'/html/body/div[137]/div[2]/div[1]/div[2]')
         target = str(target.get_attribute('id'))
-        ids = target[len('data-picker-'):-len('-trigger')]
+        ids = target[len('data-picker-'):-len('-advanced')]
+        #selowner = findElement(f'//*[@id="data-picker-{ids}-trigger"]')
         selowner = findElement(f'//*[@id="data-picker-{ids}-trigger"]')
         selowner.click()
         bar = findElement(f'//*[@id="data-picker-{ids}-simple"]/div/input[2]')
@@ -110,10 +120,11 @@ def updateLabels(webscrape, workingInterestFile, ownershipFile):
         # Contract Reports
         contreport = findElement(r'//*[@id="contract-reports-submenu-link"]')
         contreport.click()
-        contreportbut = findElement(r'//*[@id="Contract_reports"]')
-        contreportbut.click()
+        #contreportbut = findElement(r'//*[@id="Contract_reports"]')
+        #contreportbut.click()
         time.sleep(4)
-        workinginterest = findElement(r'//*[@id="ui-id-2"]/div[contains(.,"Working")]/a')
+        #workinginterest = findElement(r'//*[@id="ui-id-2"]/div[contains(.,"Working")]/a')
+        workinginterest = findElement(r'//*[@id="ui-id-1"]/div[39]/a')
         workinginterest.click()
         target2 = findElement('//*[@id="filters"]/table/tbody/tr[1]/td[2]/div/a')
         target2 = str(target2.get_attribute('id'))
@@ -145,7 +156,8 @@ def updateLabels(webscrape, workingInterestFile, ownershipFile):
         wem1 = findElement(f'//*[@id="data-picker-{ids3}-multiple-results"]/ul/li[2]')
         wem1.click()
         time.sleep(1)
-        okkk = findElement(r'/html/body/div[97]/div[3]/div/button[2]')
+        #okkk = findElement(r'/html/body/div[97]/div[3]/div/button[2]')
+        okkk = findElement(r'/html/body/div[98]/div[3]/div/button[2]/span')
         okkk.click()
         target4 = findElement('//*[@id="filters"]/table/tbody/tr[7]/td[2]/div/a')
         target4 = str(target4.get_attribute('id'))
@@ -154,13 +166,17 @@ def updateLabels(webscrape, workingInterestFile, ownershipFile):
         owntype.click()
         own = findElement(r'//*[@id="Ownership"]')
         own.click()
-        okk = findElement(r'/html/body/div[101]/div[3]/div/button[2]/span')
+        okk = findElement(r'/html/body/div[102]/div[3]/div/button[2]/span')
         okk.click()
         viewrep = findElement(r'//*[@id="save-form"]')
         viewrep.click()
+        time.sleep(15)
+        print('please waite... this step is hard for the computer to do')
         # TODO: This line doesn't work very well, the old XPath was [@id="ui-id-46"] and now its //*[@id="ui-id-50"]/p/p/a
-        downloadclick = WebDriverWait(driver, 10000).until(EC.presence_of_element_located((By.XPATH, r'//*[@id="ui-id-50"]/p/p/a')))
-        time.sleep(20)
+        #time.sleep(5)
+        #downloadclick = findElement(r'//*[@id="ui-id-50"]/p/p/a')
+        #downloadclick.click()
+        time.sleep(80)
 
         # Rename last download to leasehold
         todayDate = datetime.date(datetime.now())
@@ -188,7 +204,7 @@ def updateLabels(webscrape, workingInterestFile, ownershipFile):
         shutil.copy(file_pathOwnership, dateFolder)
         # rename the files
         shutil.move(dateFolder + '/QGIS - WEM LEASE Crop List.csv',
-                    dateFolder+'/QGIS - WEM LEASE Crop List (moved ' + str(todayDate) + ').csv')
+                    dateFolder + '/QGIS - WEM LEASE Crop List (moved ' + str(todayDate) + ').csv')
         shutil.move(dateFolder + '/QGIS - WEM, UT, 4X Import List.csv',
                     dateFolder + '/QGIS - WEM, UT, 4X Import List (moved ' + str(todayDate) + ').csv')
         driver.quit()

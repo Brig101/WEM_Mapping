@@ -11,13 +11,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9df970ed-76bd-43bd-b8fe-c4b44731a867" name="Default Changelist" comment="3/31/2021 - WEM_Mapping v3 Push">
-      <change afterPath="$PROJECT_DIR$/updateMapLayersPropertiesUpdate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/WEM_Mapping.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/WEM_Mapping.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WEM_Mapping.py" beforeDir="false" afterPath="$PROJECT_DIR$/WEM_Mapping.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productionUpdate.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionUpdate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/updateLabels.py" beforeDir="false" afterPath="$PROJECT_DIR$/updateLabels.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +38,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../WEM_Additional" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
