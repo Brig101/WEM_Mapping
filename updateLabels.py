@@ -176,7 +176,7 @@ def updateLabels(webscrape, workingInterestFile, ownershipFile):
         #time.sleep(5)
         #downloadclick = findElement(r'//*[@id="ui-id-50"]/p/p/a')
         #downloadclick.click()
-        time.sleep(80)
+        time.sleep(1000)
 
         # Rename last download to leasehold
         todayDate = datetime.date(datetime.now())
