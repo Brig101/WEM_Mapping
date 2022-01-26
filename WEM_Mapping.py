@@ -439,11 +439,13 @@ while True:
                         [sg.Text('Useful Folders/Documents')],
                         [sg.Button('Job Manual')],
                         [sg.Button('Code')],
-                        [sg.Button('Important Excel Documents')],
+                        [sg.Button('Important Excel Documents (Map labels)')],
+                        [sg.Button('PHDwin Trainings')],
+                        [sg.Button('WEM Well information')],
                         [sg.Text('Maps')],
                         [sg.Button('QGIS Map')],
                         [sg.Button('Other Map Layers')],
-                        [sg.Text('Financial Database')],
+                        [sg.Text('Financial Database - Old')],
                         [sg.Button('WEM Financial Database 2020')],
                         [sg.Button('Database Spreadsheet')]
                         ]
@@ -458,8 +460,12 @@ while True:
                 break
             if ev_Files == 'Job Manual':
                 os.startfile(r'\\WEM-MASTER\Sensitive Data\WEM Uintah\Maps\JOB MANUAL.docx')
-            if ev_Files == 'Important Excel Documents':
+            if ev_Files == 'Important Excel Documents (Map labels)':
                 os.startfile(r'\\WEM-MASTER\Sensitive Data\WEM Uintah\Maps\QGIS\IMPORTANT EXCEL DOCS\QGIS')
+            if ev_Files == 'PHDwin Documents':
+                os.startfile(r'\\WEM-MASTER\Working Projects\WEMU Leasing\Training Materials\Leasing Team Training Guides\PHDwin')
+            if ev_Files == 'WEM Well information':
+                os.startfile(r'\\wem-master\Working Projects\WEMU Leasing\Mapping Team\WEM_WELLS.xlsx')
             if ev_Files == 'QGIS Map':
                 os.startfile(r'\\WEM-MASTER\Sensitive Data\WEM Uintah\Maps\QGIS\MAIN MAP.qgz')
             if ev_Files == 'Other Map Layers':
@@ -504,5 +510,6 @@ while True:
 # backup of your versions of the code and I can easily access it if you need any help.
 # Email: pvankatwyk@gmail.com
 # Phone: (209) 637-0795
+
 
 # TODO: Make a list of things that need to be improved (Make a TODO list)
