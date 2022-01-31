@@ -438,7 +438,7 @@ while True:
         layout_Files = [[sg.Text('Which File?')],
                         [sg.Text('Useful Folders/Documents')],
                         [sg.Button('Job Manual')],
-                        [sg.Button('Code')],
+                        [sg.Button('Code|R&QGIS'), sg.Button('Code|Mapping app')],
                         [sg.Button('Important Excel Documents (Map labels)')],
                         [sg.Button('PHDwin Trainings')],
                         [sg.Button('WEM Well information')],
@@ -462,7 +462,7 @@ while True:
                 os.startfile(r'\\WEM-MASTER\Sensitive Data\WEM Uintah\Maps\JOB MANUAL.docx')
             if ev_Files == 'Important Excel Documents (Map labels)':
                 os.startfile(r'\\WEM-MASTER\Sensitive Data\WEM Uintah\Maps\QGIS\IMPORTANT EXCEL DOCS\QGIS')
-            if ev_Files == 'PHDwin Documents':
+            if ev_Files == 'PHDwin Trainings':
                 os.startfile(r'\\WEM-MASTER\Working Projects\WEMU Leasing\Training Materials\Leasing Team Training Guides\PHDwin')
             if ev_Files == 'WEM Well information':
                 os.startfile(r'\\wem-master\Working Projects\WEMU Leasing\Mapping Team\WEM_WELLS.xlsx')
@@ -470,8 +470,10 @@ while True:
                 os.startfile(r'\\WEM-MASTER\Sensitive Data\WEM Uintah\Maps\QGIS\MAIN MAP.qgz')
             if ev_Files == 'Other Map Layers':
                 os.startfile(r'\\WEM-MASTER\Sensitive Data\WEM Uintah\Maps\QGIS\Other Map Layers')
-            if ev_Files == 'Code':
+            if ev_Files == 'Code|R&QGIS':
                 os.startfile(r'\\WEM-MASTER\Sensitive Data\WEM Uintah\Maps\Code')
+            if ev_Files == 'Code|Mapping app':
+                os.startfile(r'C:\Users\Accounting\PycharmProjects\WEM_Mapping')
             if ev_Files == 'WEM Financial Database 2020':
                 os.startfile(r'\\WEM-MASTER\Sensitive Data\WEM Uintah\WEM Financial\WEM Financial Database 2020.accdb')
             if ev_Files == 'Database Spreadsheet':
