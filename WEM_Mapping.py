@@ -15,7 +15,7 @@ from selenium.webdriver import ActionChains
 from datetime import datetime
 import shutil
 import glob
-from playsound import playsound
+#from playsound import playsound
 import threading 
 from MBExtract import MBExtract
 from updateLabels import updateLabels 
@@ -25,12 +25,12 @@ from mbDegrees import mbDegrees
 from iLandmanTract import iLandmanTract
 from iLandmanMapTract import iLandmanTractMap
 from productionUpdate import productionUpdate
-from soundfxn import sound
+#from soundfxn import sound
 os.environ['PYTHONHOME'] = r'C:\Users\Accounting\Anaconda3'
 os.environ['PYTHONPATH'] = r'C:\Users\Accounting\Anaconda3\lib\site-packages'
 os.environ['R_HOME'] = 'C:/Program Files/R/R-4.0.2'
 os.environ['R_USER'] = r'C:\Users\Accounting\Anaconda3\lib\site-packages\rpy2'
-import rpy2.robjects as ro
+#import rpy2.robjects as ro
 # TODO: Add Comments!!!
 # TODO: Update the user manual
 

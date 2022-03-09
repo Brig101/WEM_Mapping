@@ -10,11 +10,11 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import ElementNotInteractableException, ElementClickInterceptedException
 import os
-from selenium.webdriver import ActionChains
-os.environ['PYTHONHOME'] = r'C:\Users\Accounting\Anaconda3'
-os.environ['PYTHONPATH'] = r'C:\Users\Accounting\Anaconda3\lib\site-packages'
-os.environ['R_HOME'] = 'C:/Program Files/R/R-4.0.2'
-os.environ['R_USER'] = r'C:\Users\Accounting\Anaconda3\lib\site-packages\rpy2'
+#from selenium.webdriver import ActionChains
+#os.environ['PYTHONHOME'] = r'C:\Users\Accounting\Anaconda3'
+#os.environ['PYTHONPATH'] = r'C:\Users\Accounting\Anaconda3\lib\site-packages'
+#os.environ['R_HOME'] = 'C:/Program Files/R/R-4.0.2'
+#os.environ['R_USER'] = r'C:\Users\Accounting\Anaconda3\lib\site-packages\rpy2'
 import rpy2.robjects as ro
 import time
 import glob
