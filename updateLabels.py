@@ -1,6 +1,6 @@
 # Function updating QGIS labels. Copies old files, moves them into new folder with todays date, runs R Scripts that alter
 # the downloaded files from iLandman.
-# This makes R work
+
 
 import shutil
 from selenium import webdriver
@@ -11,10 +11,21 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import ElementNotInteractableException, ElementClickInterceptedException
 import os
 #from selenium.webdriver import ActionChains
-#os.environ['PYTHONHOME'] = r'C:\Users\Accounting\Anaconda3'
-#os.environ['PYTHONPATH'] = r'C:\Users\Accounting\Anaconda3\lib\site-packages'
-#os.environ['R_HOME'] = 'C:/Program Files/R/R-4.0.2'
-#os.environ['R_USER'] = r'C:\Users\Accounting\Anaconda3\lib\site-packages\rpy2'
+
+# =============================================================================
+# Peters old environment paths:
+# os.environ['PYTHONHOME'] = r'C:\Users\Accounting\Anaconda3'
+# os.environ['PYTHONPATH'] = r'C:\Users\Accounting\Anaconda3\lib\site-packages'
+# os.environ['R_HOME'] = 'C:/Program Files/R/R-4.0.2'
+# os.environ['R_USER'] = r'C:\Users\Accounting\Anaconda3\envs\rstudio'
+# =============================================================================
+
+#Set paths so python knows where to look for R code
+os.environ['PYTHONHOME'] = r'C:\Users\GISUser\anaconda3'
+os.environ['PYTHONPATH'] = r'C:\Users\GISUser\anaconda3\Lib\site-packages'
+os.environ['R_HOME'] = r'C:\Users\GISUser\anaconda3\Lib\R'
+os.environ['R_USER'] = r'C:\Users\GISUser\anaconda3\envs\rstudio'
+# This makes R work
 import rpy2.robjects as ro
 import time
 import glob
@@ -112,9 +123,9 @@ def updateLabels(webscrape, workingInterestFile, ownershipFile):
         todayDate = datetime.date(datetime.now())
         time.sleep(5)
         ownerDate = r'ownerLabels ' + str(todayDate) + '.xlsx'
-        list_of_files = glob.glob(r'C:\Users\Accounting\Downloads\*')
+        list_of_files = glob.glob(r'C:\Users\GISUser\Downloads\*')
         ownership = max(list_of_files, key=os.path.getctime)
-        newownerName = r'C:\\Users\\Accounting\\Downloads\\' + str(ownerDate)
+        newownerName = r'C:\\Users\\GISUser\\Downloads\\' + str(ownerDate)
         os.rename(ownership, newownerName)
 
         # Contract Reports
@@ -182,9 +193,9 @@ def updateLabels(webscrape, workingInterestFile, ownershipFile):
         todayDate = datetime.date(datetime.now())
         time.sleep(2)
         leasingDate = r'leasingLabels ' + str(todayDate) + '.xlsx'
-        list_of_files = glob.glob(r'C:\Users\Accounting\Downloads\*')
+        list_of_files = glob.glob(r'C:\Users\GISUser\Downloads\*')
         leasehold = max(list_of_files, key=os.path.getctime)
-        newleaseName = r'C:\\Users\\Accounting\\Downloads\\' + str(leasingDate)
+        newleaseName = r'C:\\Users\\GISUser\\Downloads\\' + str(leasingDate)
         os.rename(leasehold, newleaseName)
 
 

@@ -90,6 +90,6 @@ def MBUltimate(MBstring):
     df_decimal = df_final[['decimalDegrees','distanceConverted']].copy()
 
     # Export as a CSV in a format that the M&B mapper on QGIS will recognize it
-    pd.DataFrame.to_csv(self = df_decimal, path_or_buf=r'C:\Users\Accounting\Downloads\MBUltimate.csv',
+    pd.DataFrame.to_csv(self = df_decimal, path_or_buf=r'C:\Users\GISUser\Downloads\MBUltimate.csv',
                                                 encoding='utf-8', index=False, sep=';', header = False)
     return matches1

@@ -26,10 +26,10 @@ from iLandmanTract import iLandmanTract
 from iLandmanMapTract import iLandmanTractMap
 from productionUpdate import productionUpdate
 #from soundfxn import sound
-os.environ['PYTHONHOME'] = r'C:\Users\Accounting\Anaconda3'
-os.environ['PYTHONPATH'] = r'C:\Users\Accounting\Anaconda3\lib\site-packages'
-os.environ['R_HOME'] = 'C:/Program Files/R/R-4.0.2'
-os.environ['R_USER'] = r'C:\Users\Accounting\Anaconda3\lib\site-packages\rpy2'
+#os.environ['PYTHONHOME'] = r'C:\Users\Accounting\Anaconda3'
+#os.environ['PYTHONPATH'] = r'C:\Users\Accounting\Anaconda3\lib\site-packages'
+#os.environ['R_HOME'] = 'C:/Program Files/R/R-4.0.2'
+#os.environ['R_USER'] = r'C:\Users\GISUser\anaconda3\Lib\site-packages\rpy2'
 #import rpy2.robjects as ro
 # TODO: Add Comments!!!
 # TODO: Update the user manual
@@ -85,7 +85,7 @@ while True:
                            [sg.Button('The Ultimate M&B Program')],
                            [sg.Text('iLandman')],
                            [sg.Button('Add Tract')],
-                           [sg.Text('Production')],
+                           [sg.Text('Old -- Production')],
                            [sg.Button('Update Production Spreadsheet')]]
         win_Programs = sg.Window('Programs', element_justification = 'l').Layout(layout_Programs)
 
@@ -301,9 +301,9 @@ while True:
                                                      output18,output19,output20))
 
                         output_df = pd.DataFrame(data=output_total, columns = ['Azimuth', 'Distance'])
-                        pd.DataFrame.to_csv(self=output_df, path_or_buf=r'C:\Users\Accounting\Downloads\MBImport.csv',
+                        pd.DataFrame.to_csv(self=output_df, path_or_buf=r'C:\Users\GISUser\Downloads\MBImport.csv',
                                             encoding='utf-8', index=False, sep=';')
-
+                        #Old path_or_Buffer: C:\Users\Accounting\Downloads\MBImport.csv
             if not winActive_MBExtract and ev_Programs == 'M&B String Extractor':
                 winActive_MBExtract = True
                 win_Programs.Hide()
@@ -473,7 +473,7 @@ while True:
             if ev_Files == 'Code|R&QGIS':
                 os.startfile(r'\\WEM-MASTER\Sensitive Data\WEM Uintah\Maps\Code')
             if ev_Files == 'Code|Mapping app':
-                os.startfile(r'C:\Users\Accounting\PycharmProjects\WEM_Mapping')
+                os.startfile(r'Y:\Mapping Team\Coding\WEM_Mapping')
             if ev_Files == 'WEM Financial Database 2020':
                 os.startfile(r'\\WEM-MASTER\Sensitive Data\WEM Uintah\WEM Financial\WEM Financial Database 2020.accdb')
             if ev_Files == 'Database Spreadsheet':
